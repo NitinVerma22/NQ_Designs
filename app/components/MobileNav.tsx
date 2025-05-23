@@ -1,21 +1,39 @@
-'use client';
+"use client";
 
-import { Home, Phone, Layout, Hammer } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Home, Phone, Layout } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navIcons = [
-  { name: 'Home', path: '/', icon: Home },
-  // { name: 'Services', path: '/services', icon: Hammer },
-  { name: 'Portfolio', path: '/portfolio', icon: Layout },
-  { name: 'Contact Us', path: '/contact', icon: Phone },
+  { name: "Home", path: "/", icon: Home },
+  { name: "Portfolio", path: "/portfolio", icon: Layout },
+  { name: "Contact Us", path: "/contact", icon: Phone },
 ];
 
 export default function MobileNav() {
   const pathname = usePathname();
+  const [showNav, setShowNav] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full bg-white shadow-md flex justify-around py-2 md:hidden fixed bottom-0 z-50">
+    <nav
+      className={`w-full bg-gradient-to-b from-white/80 via-white/40 to-transparent backdrop-blur-md shadow-sm flex justify-around py-2 md:hidden fixed bottom-0 z-50 transition-all duration-500 transform ${
+        showNav ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+      }`}
+    >
       {navIcons.map(({ name, path, icon: Icon }) => {
         const isActive = pathname === path;
         return (
@@ -23,7 +41,7 @@ export default function MobileNav() {
             key={name}
             href={path}
             className={`flex flex-col items-center text-xs ${
-              isActive ? 'text-yellow-600' : 'text-yellow-900'
+              isActive ? "text-yellow-600" : "text-yellow-900"
             } hover:text-yellow-500 transition-colors duration-200`}
           >
             <Icon size={30} />
