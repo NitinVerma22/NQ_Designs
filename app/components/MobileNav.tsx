@@ -30,9 +30,9 @@ export default function MobileNav() {
 
   return (
     <nav
-      className={`w-full bg-gradient-to-b from-white/80 via-white/40 to-transparent backdrop-blur-md shadow-sm flex justify-around py-2 md:hidden fixed bottom-0 z-50 transition-all duration-500 transform ${
-        showNav ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-      }`}
+      className={`w-full max-w-screen overflow-hidden bg-gradient-to-b from-white/80 via-white/40 to-transparent backdrop-blur-md shadow-sm flex justify-around py-2 md:hidden fixed bottom-0 z-50 transition-all duration-500 transform ${
+    showNav ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+  }`}
     >
       {navIcons.map(({ name, path, icon: Icon }) => {
         const isActive = pathname === path;
