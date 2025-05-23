@@ -49,6 +49,18 @@ const PortfolioPage = () => {
         {/* About Section */}
       <AnimatedOnScroll>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-10 max-w-7xl mx-auto">
+          {/* Image */}
+        <div className="w-full h-full">
+          <Image
+            src="/images/portfolio/porfolio_hero.png"
+            alt="NQ Designs office"
+            width={600}
+            height={400}
+            className="rounded-2xl shadow-xl w-full h-auto object-cover"
+            priority
+          />
+        </div>
+        
         {/* Text Content */}
         <div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">
@@ -74,17 +86,7 @@ const PortfolioPage = () => {
           </div>
         </div>
 
-        {/* Image */}
-        <div className="w-full h-full">
-          <Image
-            src="/images/porfolio_hero.png"
-            alt="NQ Designs office"
-            width={600}
-            height={400}
-            className="rounded-2xl shadow-xl w-full h-auto object-cover"
-            priority
-          />
-        </div>
+       
       </section>
     </AnimatedOnScroll>
         <section className="p-4 rounded-2xl shadow-lg">
