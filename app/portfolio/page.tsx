@@ -45,10 +45,10 @@ const PortfolioPage = () => {
     <div>
       <Header></Header>
 
-      <main className="space-y-24 px-4 sm:px-8 md:px-16 py-6 w-full max-w-screen-xl mx-auto">
+      <main className="space-y-24 px-4 sm:px-8 md:px-16 py-12 w-full max-w-screen-xl mx-auto">
         {/* About Section */}
       <AnimatedOnScroll>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-10 max-w-7xl mx-auto">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-4 max-w-7xl mx-auto">
           {/* Image */}
         <div className="w-full h-full">
           <Image
