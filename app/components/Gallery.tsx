@@ -5,28 +5,26 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: '/images/interior2.jpg', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/residential/r1.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r4.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r2.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r10.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r6.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r8.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r3.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-  { src: '/images/residential/r12.jpeg', alt: 'Modern Kitchen', rowSpan: 'row-span-1' },
-
-  { src: '/images/furniture/f1.jpeg', alt: 'Minimal Bedroom', rowSpan: 'row-span-2' },
-  { src: '/images/furniture/f2.jpeg', alt: 'Minimal Bedroom', rowSpan: 'row-span-2' },
-  { src: '/images/furniture/f4.jpeg', alt: 'Minimal Bedroom', rowSpan: 'row-span-2' },
-  { src: '/images/furniture/f5.jpeg', alt: 'Minimal Bedroom', rowSpan: 'row-span-2' },
-  { src: '/images/furniture/f3.jpeg', alt: 'Minimal Bedroom', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/gorden.jpg', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/royal_court.png', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/royal1a.png', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/royal1b.png', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/retreat_centre.png', alt: 'Living Room', rowSpan: 'row-span-2' },
-  { src: '/images/architecture/retreat_centre2.png', alt: 'Living Room', rowSpan: 'row-span-2' },
-  
+  { src: '/images/interior2.jpg', alt: 'Living Room' },
+  { src: '/images/residential/r1.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r4.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r2.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r10.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r6.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r8.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r3.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/residential/r12.jpeg', alt: 'Modern Kitchen' },
+  { src: '/images/furniture/f1.jpeg', alt: 'Minimal Bedroom' },
+  { src: '/images/furniture/f2.jpeg', alt: 'Minimal Bedroom' },
+  { src: '/images/furniture/f4.jpeg', alt: 'Minimal Bedroom' },
+  { src: '/images/furniture/f5.jpeg', alt: 'Minimal Bedroom' },
+  { src: '/images/furniture/f3.jpeg', alt: 'Minimal Bedroom' },
+  { src: '/images/architecture/gorden.jpg', alt: 'Living Room' },
+  { src: '/images/architecture/royal_court.png', alt: 'Living Room' },
+  { src: '/images/architecture/royal1a.png', alt: 'Living Room' },
+  { src: '/images/architecture/royal1b.png', alt: 'Living Room' },
+  { src: '/images/architecture/retreat_centre.png', alt: 'Living Room' },
+  { src: '/images/architecture/retreat_centre2.png', alt: 'Living Room' },
 ];
 
 const imageVariants = {
@@ -40,7 +38,7 @@ const imageVariants = {
     x: 0,
     y: 0,
     transition: {
-      delay: i * 0.1,
+      delay: i * 0.08,
       duration: 0.6,
       ease: 'easeOut',
     },
@@ -49,10 +47,10 @@ const imageVariants = {
 
 export default function Gallery() {
   return (
-    <section className="px-6 py-12 bg-orange-50 to-[#cbc6bc] text-yellow-900">
+    <section className="px-4 sm:px-6 py-12 bg-orange-50 text-yellow-900">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          className="text-4xl font-semibold mb-10 text-center tracking-wide"
+          className="text-3xl sm:text-4xl font-semibold mb-10 text-center tracking-wide"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -60,7 +58,8 @@ export default function Gallery() {
           Spaces Reimagined
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
+        {/* Responsive Masonry-style grid */}
+        <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -69,29 +68,28 @@ export default function Gallery() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className={`relative overflow-hidden rounded-2xl shadow-xl ${image.rowSpan}`}
+              className="w-full overflow-hidden rounded-2xl shadow-xl break-inside-avoid"
             >
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-                className="hover:scale-105 transition-transform duration-300 ease-in-out"
+                width={800}
+                height={600}
+                className="w-full h-auto rounded-2xl hover:scale-[1.03] transition-transform duration-300 ease-in-out"
               />
-               {/* View All Projects button */}
-     
             </motion.div>
           ))}
-          
         </div>
-           <div className="mt-16 flex justify-center">
-        <Link
-          href="/projects"
-          className="px-6 py-3 bg-yellow-800 text-white rounded-md text-sm font-medium hover:bg-yellow-600 transition"
-        >
-          View More
-        </Link>
-      </div>
+
+        {/* CTA button */}
+        <div className="mt-16 flex justify-center">
+          <Link
+            href="/projects"
+            className="px-6 py-3 bg-yellow-800 text-white rounded-md text-sm font-medium hover:bg-yellow-600 transition"
+          >
+            View More
+          </Link>
+        </div>
       </div>
     </section>
   );
