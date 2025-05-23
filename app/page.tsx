@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
    <Header />
-   <HeroSection/>
+{/*    <HeroSection/> */}
    <Services/>
    {/* <OurProjects/> */}
    <Gallery/>
