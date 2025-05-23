@@ -62,9 +62,7 @@ export default function Header() {
   >
     Free Consultation
   </button>
-  <div className="md:hidden">
-    <MobileNav />
-  </div>
+
 
   {/* ✅ Free Consultation Modal */}
   <FreeConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
