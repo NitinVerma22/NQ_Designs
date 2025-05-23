@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Portfolio() {
   return (
-    <main className="space-y-24 px-4 sm:px-8 md:px-16 py-12 w-full max-w-screen-xl mx-auto">
+    <main className=" px-4 sm:px-8 md:px-16 py-12 w-full max-w-screen-xl mx-auto">
       <section className="space-y-6 text-center">
         <motion.h1
           {...fadeIn({ direction: "up", delay: 0.2 })}
