@@ -82,7 +82,7 @@ export default function Gallery() {
         </div>
 
         {/* CTA button */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-10 mb-10 flex justify-center">
           <Link
             href="/projects"
             className="px-6 pt-3 pb-6 bg-yellow-800 text-white rounded-md text-sm font-medium hover:bg-yellow-600 transition"
