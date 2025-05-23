@@ -40,51 +40,53 @@ const projects = [
 
 const PortfolioPage = () => {
   const [showMore, setShowMore] = useState(false);
-
+ const [isExpanded, setIsExpanded] = useState(false);
   return (
     <div>
       <Header></Header>
 
       <main className="space-y-24 px-16 py-12 w-[100vw] md:w-[85vw] mx-auto">
         {/* About Section */}
-        <AnimatedOnScroll>
-          <section className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-4">About NQ Designs Pvt. Ltd.</h2>
-                <p className="text-gray-600 leading-relaxed line-clamp-3 md:line-clamp-none">
-                NQ Designs Pvt. Ltd. is a premier architecture and interior design firm committed to transforming spaces into inspir
-                
-                
-                
-                ing experiences. With a deep focus on innovation, elegance, and functionality, we create homes and commercial spaces that stand the test of time.
-                </p>
-                {/* Show more text on mobile when "Read More" is clicked */}
-                {showMore && (
-                <p className="text-gray-600 leading-relaxed mt-2 md:hidden">
-                  NQ Designs Pvt. Ltd. is a premier architecture and interior design firm committed to transforming spaces into inspiring experiences. With a deep focus on innovation, elegance, and functionality, we create homes and commercial spaces that stand the test of time.
-                </p>
-                )}
-              {/* Responsive "Read More" button for mobile only */}
-              <div className="block md:hidden mt-4">
-                <button
-                  className="text-blue-600 underline"
-                  onClick={() => setShowMore((prev) => !prev)}
-                  type="button"
-                >
-                  {showMore ? 'Read Less' : 'Read More'}
-                </button>
-              </div>
-            </div>
-            <Image
-              src="/images/porfolio_hero.png"
-              alt="NQ Designs office"
-              width={600}
-              height={400}
-              className="rounded-2xl shadow-lg object-cover"
-            />
-            {/* Managing Director */}
-          </section>
-        </AnimatedOnScroll>
+      <AnimatedOnScroll>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-10 max-w-7xl mx-auto">
+        {/* Text Content */}
+        <div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4 leading-tight">
+            About NQ Designs Pvt. Ltd.
+          </h2>
+          <p
+            className={`text-gray-600 text-base leading-relaxed transition-all duration-300 ease-in-out ${
+              showMore ? "" : "line-clamp-4 md:line-clamp-none"
+            }`}
+          >
+            NQ Designs Pvt. Ltd. is a premier architecture and interior design firm committed to transforming spaces into inspiring experiences. With a deep focus on innovation, elegance, and functionality, we create homes and commercial spaces that stand the test of time.
+          </p>
+
+          {/* Read More Toggle (only on mobile) */}
+          <div className="block md:hidden mt-3">
+            <button
+              onClick={() => setShowMore((prev) => !prev)}
+              type="button"
+              className="text-yellow-600 hover:text-yellow-800 font-medium underline transition duration-200"
+            >
+              {showMore ? "Read Less" : "Read More"}
+            </button>
+          </div>
+        </div>
+
+        {/* Image */}
+        <div className="w-full h-full">
+          <Image
+            src="/images/porfolio_hero.png"
+            alt="NQ Designs office"
+            width={600}
+            height={400}
+            className="rounded-2xl shadow-xl w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      </section>
+    </AnimatedOnScroll>
         <section className="p-4 rounded-2xl shadow-lg">
           <div className='flex justify-center text-yellow-600 text-2xl py-8 '>Managing Director</div>
           <div className="max-w-6xl mx-auto ">
@@ -106,17 +108,30 @@ const PortfolioPage = () => {
               </div>
 
               {/* Text Box */}
-              <div className="w-full md:w-1/2 p-8 text-gray-800">
-                <h3 className="text-3xl font-bold mb-4 text-yellow-800">
-                  Mrs. Nida Qadir
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                  Managing Director
-                </p>
-                <p className="text-base leading-relaxed text-gray-700 line-clamp-2 md:line-clamp-none">
-                  As the Founder and Managing Director of NQ Design Pvt. Ltd., I’ve always believed that great design is where vision meets purpose. With a background in architecture, construction, and interior design, my goal has been to lead projects that are not only aesthetically beautiful but also deeply functional and enduring.
-                  At NQ Design, I work closely with our clients and team to ensure each space we create reflects elegance, efficiency, and individuality. From structural planning to the final interior touches, I’m passionate about turning ideas into timeless environments that enhance how people live and work.            </p>
-              </div>
+             <div className="w-full md:w-1/2 p-6 md:p-8 bg-white rounded-2xl shadow-md border border-gray-200 text-gray-800">
+      <h3 className="text-2xl md:text-3xl font-bold mb-2 text-yellow-800">
+        Mrs. Nida Qadir
+      </h3>
+      <p className="text-sm text-gray-600 mb-2">Managing Director</p>
+      
+      <p
+        className={`
+          text-base leading-relaxed text-gray-700 transition-all duration-300 
+          ${isExpanded ? "line-clamp-none" : "line-clamp-3"} 
+          md:line-clamp-none
+        `}
+      >
+        As the Founder and Managing Director of NQ Design Pvt. Ltd., I’ve always believed that great design is where vision meets purpose. With a background in architecture, construction, and interior design, my goal has been to lead projects that are not only aesthetically beautiful but also deeply functional and enduring. At NQ Design, I work closely with our clients and team to ensure each space we create reflects elegance, efficiency, and individuality. From structural planning to the final interior touches, I’m passionate about turning ideas into timeless environments that enhance how people live and work.
+      </p>
+
+      {/* Read More Toggle (visible only on mobile) */}
+      <button
+        className="mt-2 text-sm font-medium text-yellow-700 hover:underline md:hidden"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        {isExpanded ? "Read less" : "Read more"}
+      </button>
+    </div>
             </motion.div>
           </div>
         </section>
