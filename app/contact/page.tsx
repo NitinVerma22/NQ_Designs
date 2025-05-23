@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import FreeConsultationModal from "../components/FreeConsultationModal";
-import MobileNav from "../components/MobileNav";  
-import Image from "next/image"; 
+import MobileNav from "../components/MobileNav";
 import {
   FaInstagram,
   FaFacebook,
@@ -18,19 +16,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function ContactPage() {
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = (data: any) => {
-    console.log("Form Submitted", data);
-    reset();
-  };
   const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
     <div className="min-h-screen bg-[#ede7e3]">
       <Header />
+
       {/* Hero Section */}
-      <div className="relative h-130  ">
+      <div className="relative h-130">
         <video
           src="/videos/contact-hero.mp4"
           autoPlay
@@ -39,18 +32,18 @@ export default function ContactPage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0  bg-opacity-60 flex items-center justify-center">
+        <div className="absolute inset-0 bg-opacity-60 flex items-center justify-center">
           <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-white text-4xl md:text-5xl font-bold"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-white text-4xl md:text-5xl font-bold"
           >
-        Let’s Start Your Dream Space
+            Let’s Start Your Dream Space
           </motion.h1>
         </div>
       </div>
 
-      {/* Contact Info & Form */}
+      {/* Contact Info & CTA (No Form) */}
       <section className="py-16 px-6 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Contact Info Card */}
         <motion.div
@@ -67,76 +60,60 @@ export default function ContactPage() {
           <div className="space-y-4 text-gray-700 text-base">
             <div className="flex items-center gap-3">
               <FaMapMarkerAlt className="text-primary" />
-              <span>123 Design Street, Lucknow, India</span>
+              <span>Near Riviera Phase II Gomati Nagar  Extension , Lucknow, India</span>
             </div>
             <div className="flex items-center gap-3">
               <FaPhoneAlt className="text-primary" />
-              <span>+91 98765 43210</span>
+              <span>+91 7800714729</span>
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-primary" />
-              <span>contact@nqdesigns.in</span>
+              <span>nqdesigns87@gmail.com</span>
             </div>
           </div>
 
           <div className="flex gap-5 pt-6">
-            <a
-              href="#"
-              target="_blank"
-              className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110"
-            >
+            <a href="https://www.instagram.com/_nqdesigns?igsh=MWozNjNzcjhxeTdteA%3D%3D" className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110">
               <FaInstagram />
             </a>
-            <a
-              href="#"
-              target="_blank"
-              className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110"
-            >
+            <a href="https://www.facebook.com/nqdesigns.lucknow?rdid=pZYEkQn3l8BTFA4c&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Kkqms4D8p%2F#" className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110">
               <FaFacebook />
             </a>
-            <a
-              href="#"
-              target="_blank"
-              className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110"
-            >
+            {/* <a href="#" className="text-xl text-gray-700 hover:text-black transition transform hover:scale-110">
               <FaLinkedin />
-            </a>
+            </a> */}
           </div>
         </motion.div>
 
-        {/* Contact Form Card */}
-        <motion.form
-          onSubmit={handleSubmit(onSubmit)}
+        {/* CTA Instead of Contact Form */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 space-y-5"
+          className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col justify-center items-center space-y-5 text-center"
         >
-          <h3 className="text-2xl font-semibold mb-2">Send Us a Message</h3>
-          <input
-            {...register("name")}
-            placeholder="Your Name"
-            className="w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-gray-300"
-          />
-          <input
-            {...register("email")}
-            placeholder="Email Address"
-            type="email"
-            className="w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-gray-300"
-          />
-          <textarea
-            {...register("message")}
-            placeholder="Tell us about your project..."
-            rows={5}
-            className="w-full border border-gray-300 p-3 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-gray-300"
-          />
-          <button
-            type="submit"
-            className="w-full bg-yellow-800 text-white p-3 rounded-lg font-medium hover:bg-gray-800 transition"
-          >
-            Send Message
-          </button>
-        </motion.form>
+          <h3 className="text-2xl font-semibold text-yellow-700">Let’s Discuss Your Project</h3>
+          <p className="text-gray-600">
+            Skip the form. Just call us or send a message directly on WhatsApp!
+          </p>
+
+          <div className="flex gap-4 flex-wrap justify-center">
+            <a
+              href="tel:+917800714729"
+              className="bg-yellow-800 text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+            >
+              📞 Call Now
+            </a>
+            <a
+              href="https://wa.me/917800714729"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* Map with Frame */}
@@ -156,31 +133,8 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-[#ede7e3] py-16 px-6 md:px-20 text-center border-t">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl md:text-4xl font-semibold mb-4">Ready to Transform Your Space?</h2>
-          <p className="text-gray-600 max-w-xl mx-auto mb-6">
-            Schedule a free consultation with our interior experts and let’s bring your vision to life.
-          </p>
-          <div className="flex items-center space-x-4">
-            <div className="w-full flex justify-center">
-              <button
-              onClick={() => setModalOpen(true)}
-              className="md:inline-block px-5 py-2 bg-yellow-800 text-white rounded-full text-sm font-semibold hover:bg-blue-700 transition items-center"
-              >
-              Free Consultation
-              </button>
-            </div>
-            <div className="md:hidden">
-              <MobileNav />
-            </div>
-          
-            {/* ✅ Free Consultation Modal */}
-            <FreeConsultationModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-          </div>
-        </motion.div>
-      </section>
+    
+
       <Footer />
       <MobileNav />
     </div>
