@@ -60,7 +60,8 @@ export default function Header() {
     onClick={() => setModalOpen(true)}
     className="md:inline-block px-5 py-2 bg-yellow-800 text-white rounded-full text-sm font-semibold hover:bg-yellow-600 transition"
   >
-    Free Consultation
+    <span className="hidden md:inline">Free Consultation</span>
+    <span className="inline md:hidden">Consult</span>
   </button>
 
 
