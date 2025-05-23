@@ -59,7 +59,7 @@ export default function Gallery() {
         </motion.h2>
 
         {/* Responsive Masonry-style grid */}
-        <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+        <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 overflow-hidden">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -75,7 +75,7 @@ export default function Gallery() {
                 alt={image.alt}
                 width={800}
                 height={600}
-                className="w-full h-auto rounded-2xl hover:scale-[1.03] transition-transform duration-300 ease-in-out"
+                className="w-full h-auto rounded-2xl hover:scale-[1.03] transition-transform duration-300 ease-in-out overflow-hidden"
               />
             </motion.div>
           ))}
