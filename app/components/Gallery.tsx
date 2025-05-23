@@ -85,7 +85,7 @@ export default function Gallery() {
         <div className="mt-16 flex justify-center">
           <Link
             href="/projects"
-            className="px-6 py-3 bg-yellow-800 text-white rounded-md text-sm font-medium hover:bg-yellow-600 transition"
+            className="px-6 pt-3 pb-6 bg-yellow-800 text-white rounded-md text-sm font-medium hover:bg-yellow-600 transition"
           >
             View More
           </Link>
