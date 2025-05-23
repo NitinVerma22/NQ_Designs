@@ -45,10 +45,10 @@ const PortfolioPage = () => {
     <div>
       <Header></Header>
 
-      <main className="space-y-24 px-4 sm:px-8 md:px-16 py-12 w-full max-w-screen-xl mx-auto">
+      <main className=" space-y-8 md:space-y-24 px-4 sm:px-8 md:px-16 py-12 w-full max-w-screen-xl mx-auto bg-[#d8ccc2] md:bg-none">
         {/* About Section */}
       <AnimatedOnScroll>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-4 max-w-7xl mx-auto">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-4 md:py-10 max-w-7xl mx-auto">
           {/* Image */}
         <div className="w-full h-full">
           <Image
@@ -90,7 +90,7 @@ const PortfolioPage = () => {
       </section>
     </AnimatedOnScroll>
         <section className="p-4 rounded-2xl shadow-lg">
-          <div className='flex justify-center text-yellow-600 text-2xl py-8 '>Managing Director</div>
+          <div className='flex justify-center text-yellow-600 text-2xl py-4 '>Managing Director</div>
           <div className="max-w-6xl mx-auto ">
             <motion.div
               className="flex flex-col md:flex-row items-center  bg-gray-100 rounded-2xl shadow-lg overflow-hidden"
