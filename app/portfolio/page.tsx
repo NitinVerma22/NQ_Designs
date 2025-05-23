@@ -45,7 +45,7 @@ const PortfolioPage = () => {
     <div>
       <Header></Header>
 
-      <main className="space-y-24 px-16 py-12 w-[100vw] md:w-[85vw] mx-auto">
+      <main className="space-y-24 px-16  w-[100vw] md:w-[85vw] mx-auto">
         {/* About Section */}
       <AnimatedOnScroll>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 md:px-12 py-10 max-w-7xl mx-auto">
