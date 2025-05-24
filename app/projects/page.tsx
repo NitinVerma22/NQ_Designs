@@ -100,18 +100,7 @@ const allProjects: Project[] = [
 
   // === Commercial Projects ===
 
-  {
-    title: 'Retail Mall Space',
-    description: 'Commercial layout with optimized navigation.',
-    category: 'Commercial',
-    image: '/images/commercial/c2.JPG',
-  },
-  {
-    title: 'Retail Mall Space',
-    description: 'Commercial layout with optimized navigation.',
-    category: 'Commercial',
-    image: '/images/commercial/c3.JPG',
-  },
+
   {
     title: 'Retail Mall Space',
     description: 'Commercial layout with optimized navigation.',
