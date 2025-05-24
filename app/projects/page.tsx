@@ -99,23 +99,18 @@ const allProjects: Project[] = [
   // Add more residential images here...
 
   // === Commercial Projects ===
+
   {
     title: 'Retail Mall Space',
     description: 'Commercial layout with optimized navigation.',
     category: 'Commercial',
-    image: '/images/commercial/c1.jpg',
+    image: '/images/commercial/c2.JPG',
   },
   {
     title: 'Retail Mall Space',
     description: 'Commercial layout with optimized navigation.',
     category: 'Commercial',
-    image: '/images/commercial/c2.jpg',
-  },
-  {
-    title: 'Retail Mall Space',
-    description: 'Commercial layout with optimized navigation.',
-    category: 'Commercial',
-    image: '/images/commercial/c3.jpg',
+    image: '/images/commercial/c3.JPG',
   },
   {
     title: 'Retail Mall Space',
