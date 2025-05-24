@@ -66,7 +66,7 @@ export default function DraggableWhatsAppButton() {
       }}
     >
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/+917800714729"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full h-full flex items-center justify-center"
