@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -46,6 +47,19 @@ const imageVariants = {
 };
 
 export default function Gallery() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // Tailwind 'sm' breakpoint
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const visibleImages = isMobile ? images.slice(0, 6) : images;
+
   return (
     <section className="px-4 sm:px-6 py-12 bg-orange-50 text-yellow-900">
       <div className="max-w-6xl mx-auto">
@@ -58,9 +72,8 @@ export default function Gallery() {
           Spaces Reimagined
         </motion.h2>
 
-        {/* Responsive Masonry-style grid */}
         <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 overflow-hidden">
-          {images.map((image, index) => (
+          {visibleImages.map((image, index) => (
             <motion.div
               key={index}
               custom={index}
@@ -81,7 +94,6 @@ export default function Gallery() {
           ))}
         </div>
 
-        {/* CTA button */}
         <div className="mt-10 mb-10 flex justify-center">
           <Link
             href="/projects"
