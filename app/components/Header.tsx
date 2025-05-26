@@ -15,7 +15,10 @@ const navItems = [
 export default function Header() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <header className=" sticky absolute top-0 left-0 w-full h-20 z-50 bg-gradient-to-b from-white/80 via-white/40 to-[#dcd1c8] backdrop-blur-md shadow-sm">
+<header className="sticky top-0 left-0 w-full h-20 z-50 bg-white/80 dark:bg-[#fefefe]/90 bg-gradient-to-b from-white/80 via-white/40 to-[#dcd1c8] dark:from-[#fefefe]/90 dark:via-[#fefefe]/70 dark:to-[#e8e1db] backdrop-blur-md shadow-sm">
+
+
+
       <div className="flex items-center justify-between h-full max-w-7xl mx-auto px-4 md:px-8">
 
         {/* Left: Logo + Company Name */}
