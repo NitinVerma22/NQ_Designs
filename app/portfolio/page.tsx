@@ -231,7 +231,7 @@ const PortfolioPage = () => {
               playsInline
 
             >
-              <source src="/videos/contact-hero.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dqk43sqxo/video/upload/v1748429501/du1pvt4amagc3hrwsa6t.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div>
