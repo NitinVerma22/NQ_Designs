@@ -25,7 +25,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <div className="relative h-130">
         <video
-          src="/videos/contact-hero.mp4"
+          src="https://res.cloudinary.com/dqk43sqxo/video/upload/v1748429501/du1pvt4amagc3hrwsa6t.mp4"
           autoPlay
           loop
           muted
