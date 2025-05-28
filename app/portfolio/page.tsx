@@ -19,22 +19,21 @@ const projects = [
     title: 'Retreat Centre I',
     image: '/images/portfolio/retreat_centre1.jpeg',
     description: 'Modern and stylish apartment interiors.',
-    href: '/projects/apartments',
+ 
   },
   {
     id: 'villas',
     title: 'Retreat Centre II',
     image: '/images/portfolio/retreat2.png',
-    description: 'Modern and stylish apartment interiors.',
+    description: 'Contemporary elegance tailored for urban living',
 
-    href: '/projects/villas',
   },
   {
     id: 'commercial',
     title: 'Royal Court',
     image: '/images/portfolio/royal_court.png',
-    description: 'Office, retail and co-working spaces.',
-    href: '/projects/commercial',
+    description: 'Chic and functional interiors for modern apartments.',
+ 
   },
 ];
 
@@ -163,7 +162,7 @@ const PortfolioPage = () => {
                     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                   }}
                 >
-                  <Link href={project.href} className="group block">
+              
                     <div className="rounded-2xl overflow-hidden shadow-lg transition-transform transform hover:scale-105 bg-white">
                       <Image
                         src={project.image}
@@ -173,13 +172,13 @@ const PortfolioPage = () => {
                         className="w-full h-56 object-cover"
                       />
                       <div className="p-4">
-                        <h3 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-xl font-semibold text-gray-900">
                           {project.title}
                         </h3>
                         <p className="text-gray-500">{project.description}</p>
                       </div>
                     </div>
-                  </Link>
+            
                 </motion.div>
               ))}
             </motion.div>
@@ -199,19 +198,19 @@ const PortfolioPage = () => {
         {/* Customer Review */}
         <AnimatedOnScroll>
           <section className="bg-gray-50 p-8 rounded-2xl shadow">
-            <h2 className="text-3xl font-bold mb-6">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 ">What Our Clients Say</h2>
             <blockquote className="text-lg italic text-gray-700 border-l-4 border-blue-500 pl-4">
               “NQ Designs transformed our apartment into a luxurious and functional space. Their attention to detail and professionalism is unmatched.”
             </blockquote>
-            <p className="mt-4 font-semibold">— Priya Sharma, Lucknow</p>
+            <p className="mt-4 font-semibold text-gray-800">— Asif Ali, Lucknow</p>
             <blockquote className="text-lg italic text-gray-700 border-l-4 border-blue-500 pl-4">
-              “NQ Designs transformed our apartment into a luxurious and functional space. Their attention to detail and professionalism is unmatched.”
+              "Working with NQ Designs was a seamless experience from start to finish. They understood our vision perfectly and delivered a space that is both elegant and comfortable."
             </blockquote>
-            <p className="mt-4 font-semibold">— Priya Sharma, Lucknow</p>
+            <p className="mt-4 font-semibold text-gray-800">— Priya Singh, Lucknow</p>
             <blockquote className="text-lg italic text-gray-700 border-l-4 border-blue-500 pl-4">
-              “Working with NQ Designs was a seamless experience. They understood our vision and delivered beyond our expectations.”
+            "NQ Designs brought our dream home to life with creativity and precision. The quality of their work and commitment to excellence truly set them apart."
             </blockquote>
-            <p className="mt-4 font-semibold">— Ramesh Babu, Lucknow</p>
+            <p className="mt-4 font-semibold text-gray-800">— Ramesh Sharma, Lucknow</p>
           </section>
         </AnimatedOnScroll>
 
